@@ -41,6 +41,7 @@ function formatRupiah(angka) {
 function tampilkanLayanan(data) {
     const grid = document.getElementById("daftar-layanan");
     const penghitung = document.getElementById("jumlah-layanan");
+    if (!grid || !penghitung) return;
 
     grid.innerHTML = "";
 
@@ -75,8 +76,10 @@ function tampilkanLayanan(data) {
 }
 
 function cariLayanan() {
-    const kataKunci = document.getElementById("cari-layanan").value.toLowerCase().trim();
+    const inputCari = document.getElementById("cari-layanan");
+    if (!inputCari) return;
 
+    const kataKunci = inputCari.value.toLowerCase().trim();
     const hasil = layanan.filter((item) =>
         item.nama.toLowerCase().includes(kataKunci) ||
         item.deskripsi.toLowerCase().includes(kataKunci)
@@ -87,6 +90,7 @@ function cariLayanan() {
 
 function tampilkanKeahlian() {
     const daftar = document.getElementById("daftar-keahlian");
+    if (!daftar) return;
 
     keahlian.forEach((skill) => {
         const li = document.createElement("li");
@@ -96,90 +100,59 @@ function tampilkanKeahlian() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    tampilkanLayanan(layanan);
-    tampilkanKeahlian();
-});
+    if (document.getElementById("daftar-layanan")) {
+        tampilkanLayanan(layanan);
+        tampilkanKeahlian();
+        document.getElementById("cari-layanan").addEventListener("input", cariLayanan);
+    }
 
-document.getElementById("cari-layanan").addEventListener("input", cariLayanan);
+    const formJasa = document.getElementById("formJasa");
+    if (formJasa) {
+        formJasa.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-const formJasa = document.getElementById("formJasa");
-formJasa.addEventListener("submit", function (e) {
-    e.preventDefault();
+            const nama = document.getElementById("nama").value;
+            const wa = document.getElementById("wa").value;
+            const email = document.getElementById("email").value;
+            const desainTerpilih = document.querySelector('input[name="desain"]:checked');
+            const desain = desainTerpilih ? desainTerpilih.value : "-";
+            const fileBukti = document.getElementById("bukti").files[0];
 
-    const nama = document.getElementById("nama").value;
-    const wa = document.getElementById("wa").value;
-    const email = document.getElementById("email").value;
-    const desainTerpilih = document.querySelector('input[name="desain"]:checked');
-    const desain = desainTerpilih ? desainTerpilih.value : "-";
-    const fileBukti = document.getElementById("bukti").files[0];
+            const params = new URLSearchParams({ nama, wa, email, desain });
 
-    // Ambil alamat URL asli home.html agar tombol kembali selalu akurat
-    const homeUrl = window.location.href.split("#")[0] + "#formJasa";
+            if (fileBukti) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    sessionStorage.setItem("buktiBayar", event.target.result);
+                    window.location.href = "output.html?" + params.toString();
+                };
+                reader.readAsDataURL(fileBukti);
+            } else {
+                sessionStorage.removeItem("buktiBayar");
+                window.location.href = "output.html?" + params.toString();
+            }
+        });
+    }
 
-    const bukaHalamanHasil = (gambarSrc) => {
-        const halaman = window.open("", "_blank");
-        halaman.document.write(`
-            <!DOCTYPE html>
-            <html lang="id">
-            <head>
-                <meta charset="UTF-8">
-                <title>Detail Pemesanan - ${nama}</title>
-                <style>
-                    body { font-family: sans-serif; padding: 30px; background: #f4f6f9; color: #333; }
-                    .card { max-width: 500px; margin: auto; background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-                    h2 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-                    p { margin: 10px 0; line-height: 1.5; }
-                    img { max-width: 100%; height: auto; margin-top: 10px; border-radius: 6px; border: 1px solid #ddd; }
-                    .aksi { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-                    .btn { padding: 10px 16px; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: 600; text-decoration: none; }
-                    .btn-print { background: #28a745; }
-                    .btn-print:hover { background: #218838; }
-                    .btn-kembali { background: #1f6bff; }
-                    .btn-kembali:hover { background: #4f8bff; }
-                </style>
-            </head>
-            <body>
-                <div class="card">
-                    <h2>Data Formulir Pemesanan</h2>
-                    <p><strong>Nama:</strong> ${nama}</p>
-                    <p><strong>No WhatsApp:</strong> ${wa}</p>
-                    <p><strong>Gmail:</strong> ${email}</p>
-                    <p><strong>Pilihan Desain:</strong> ${desain}</p>
-                    <p><strong>Bukti Pembayaran:</strong><br>
-                    ${gambarSrc ? `<img src="${gambarSrc}" alt="Bukti Bayar">` : "Tidak ada file"}</p>
-                    
-                    <div class="aksi">
-                        <button class="btn btn-print" onclick="window.print()">Cetak / Simpan PDF</button>
-                        <button class="btn btn-kembali" onclick="kembaliPesan()">← Pesan Lagi</button>
-                    </div>
-                </div>
+    if (document.getElementById("tampil-nama")) {
+        const params = new URLSearchParams(window.location.search);
 
-                <script>
-                    function kembaliPesan() {
-                        if (window.opener && !window.opener.closed) {
-                            window.opener.location.href = "${homeUrl}";
-                            window.opener.focus();
-                            window.close();
-                        } else {
-                            window.location.href = "${homeUrl}";
-                        }
-                    }
-                <\/script>
-            </body>
-            </html>
-        `);
-        halaman.document.close();
+        document.getElementById("tampil-nama").textContent = params.get("nama") || "-";
+        document.getElementById("tampil-wa").textContent = params.get("wa") || "-";
+        document.getElementById("tampil-email").textContent = params.get("email") || "-";
+        document.getElementById("tampil-desain").textContent = params.get("desain") || "-";
 
-        formJasa.reset();
-    };
+        const bukti = sessionStorage.getItem("buktiBayar");
+        if (bukti) {
+            document.getElementById("tampil-bukti").innerHTML = `<img src="${bukti}" alt="Bukti Bayar">`;
+        }
 
-    if (fileBukti) {
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            bukaHalamanHasil(event.target.result);
-        };
-        reader.readAsDataURL(fileBukti);
-    } else {
-        bukaHalamanHasil(null);
+        document.getElementById("btn-print").addEventListener("click", () => {
+            window.print();
+        });
+
+        document.getElementById("btn-kembali").addEventListener("click", () => {
+            window.location.href = "home.html#formJasa";
+        });
     }
 });
