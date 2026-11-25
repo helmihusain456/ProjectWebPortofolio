@@ -1,4 +1,3 @@
-[github_readme.md](https://github.com/user-attachments/files/35415320/github_readme.md)
 [github_readme.md](https://github.com/user-attachments/files/3541531<div align="center">
 
 <!-- Animated Header Wave -->
