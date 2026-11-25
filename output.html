@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Formulir Pemesanan</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Data Formulir Pemesanan</h2>
+        
+        <div class="data-group">
+            <strong>Nama:</strong> <span id="tampil-nama">-</span>
+        </div>
+        <div class="data-group">
+            <strong>No WhatsApp:</strong> <span id="tampil-wa">-</span>
+        </div>
+        <div class="data-group">
+            <strong>Gmail:</strong> <span id="tampil-email">-</span>
+        </div>
+        <div class="data-group">
+            <strong>Pilihan Desain:</strong> <span id="tampil-desain">-</span>
+        </div>
+        
+        <div class="data-group">
+            <strong>Bukti Pembayaran:</strong>
+            <div class="bukti-bayar" id="tampil-bukti">
+                <span>Tidak ada file</span>
+            </div>
+        </div>
+        
+        <div class="aksi">
+            <button type="button" class="btn btn-print" id="btn-print">Cetak / Simpan PDF</button>
+            <button type="button" class="btn btn-kembali" id="btn-kembali">← Pesan Lagi</button>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
