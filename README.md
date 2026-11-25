@@ -1,5 +1,3 @@
-[github_readme.md](https://github.com/user-attachments/files/3541531<div align="center">
-
 <!-- Animated Header Wave -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:07111f,50:1f6bff,100:4f8bff&height=200&section=header&text=Creative%20Web%20Design&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Tim%20Mahasiswa%20Teknologi%20Informasi%20%E2%80%94%20UIN%20Mataram&descAlignY=58&descSize=16" width="100%" />
 
@@ -72,4 +70,4 @@ ProjectWebPortofolio/
 </div>
 
 <!-- Animated Footer Wave -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:07111f,50:1f6bff,100:4f8bff&height=110&section=footer" width="100%" />5/github_readme.md)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:07111f,50:1f6bff,100:4f8bff&height=110&section=footer" width="100%" />
