@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="about.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main class="container">
+        <section class="intro" id="home">
+            <h1>Meet Our Creative Team</h1>
+            <p>Kami adalah tim mahasiswa yang memiliki semangat dan kreativitas dalam bidang desain serta pengembangan website. Kami bekerja sama untuk menciptakan website yang menarik, informatif, dan mudah digunakan dengan memanfaatkan keterampilan HTML, CSS, dan JavaScript. Melalui proyek ini, kami berusaha mengembangkan kemampuan, menambah pengalaman, serta membangun kerja sama tim untuk menghasilkan karya yang kreatif dan bermanfaat.</p>
+        </section>
+
+        <section class="team" id="team">
+            <article class="card">
+                <img src="mett.jpg" alt="Anggota tim">
+                <h2>Elmi husain</h2>
+                <span>Team Leader</span>
+                <p><strong>Email: elmihusain456@gmail.com</strong></p>
+                <p><strong>Telepon: 087787974265</strong></p>
+                <p><strong>Keahlian: Leadership, Project Management</strong></p>
+                <p><strong>Deskripsi: Mengoordinasikan tim dan proyek.</strong></p>
+            </article>
+
+            <article class="card">
+                <img src="Rasya.jpeg" alt="Anggota tim">
+                <h2>Muhammad Rasya Ardian Pratama</h2>
+                <span>Web Developer</span>
+                <p><strong>Email: rasyaardian@gmail.com</strong></p>
+                <p><strong>Telepon: 081234567890</strong></p>
+                <p><strong>Keahlian: HTML, CSS, JavaScript</strong></p>
+                <p><strong>Deskripsi: Mengembangkan website.</strong></p>
+            </article>
+
+            <article class="card">
+                <img src="tania.jpg" alt="Anggota tim">
+                <h2>Fridatania Hasanatan</h2>
+                <span>UI/UX Designer</span>
+                <p><strong>Email: fridataniahasanatan@gmail.com</strong></p>
+                <p><strong>Telepon: 081234567890</strong></p>
+                <p><strong>Keahlian: UI/UX Design, Figma</strong></p>
+                <p><strong>Deskripsi: Merancang tampilan website.</strong></p>
+            </article>
+        </section>
+
+        <section class="form" id="contact">
+            <h2>Formulir Anggota Website Team</h2>
+            <p>Isi formulir berikut untuk menambahkan profil anggota tim.</p>
+
+            <form id="memberForm">
+                <label for="name">Nama lengkap</label>
+                <input type="text" id="name" placeholder="Nama lengkap" required>
+
+                <label for="role">Jabatan</label>
+                <select id="role" required>
+                    <option value="">Pilih jabatan</option>
+                    <option>Team Leader</option>
+                    <option>Web Developer</option>
+                    <option>UI/UX Designer</option>
+                </select>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required>
+
+                <label for="phone">Nomor telepon</label>
+                <input type="tel" id="phone" placeholder="Contoh: 081234567890" required>
+
+                <label for="skill">Keahlian</label>
+                <input type="text" id="skill" placeholder="Contoh: HTML, CSS, JavaScript" required>
+
+                <label for="photo">Foto profil</label>
+                <input type="file" id="photo" accept="image/*">
+
+                <label for="bio">Deskripsi diri</label>
+                <textarea id="bio" placeholder="Ceritakan tentang diri dan kemampuanmu" required></textarea>
+
+                <button type="submit">Kirim Profil</button>
+                <p id="formMessage" role="alert"></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
