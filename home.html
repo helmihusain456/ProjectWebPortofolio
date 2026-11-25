@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Home</title>
+</head>
+<body>
+    <header class="main-header">
+        <a href="home.html" class="logo">
+            <img src="logoo.png" alt="Logo">
+        </a>
+        <nav class="navbar">
+            <a href="home.html" class="nav-link active">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="hero" class="hero-section">
+            <span>Welcome to my portfolio</span>
+            <h1>Hai Kami Tim Design Web Kreatif UNIVERSITAS ISLAM NEGERI MATARAM</h1>
+            <h2>Teknologi Informasi Student</h2>
+            <p class="description">
+                Mahasiswa Teknologi Informasi Universitas Islam Negeri Mataram 
+                dengan latar belakang Teknologi Informasi serta minat pada Software Engineer, Data Engineer, dan Network Engineer.
+            </p>
+            <button class="contact-button" onclick="window.location.href='contact.html'">
+                Contact Us
+            </button>
+        </section>
+
+        <section id="harga" class="jasa-page">
+            <div class="judul">
+                <span class="badge">LAYANAN DESIGN</span>
+                <h1>Jasa Design Kreatif <em>Sesuai Kebutuhan Anda</em></h1>
+                <p>Harga di bawah ini adalah biaya awal untuk ruang lingkup standar. Detail ukuran, materi, dan kebutuhan file akan kami konfirmasi dulu sebelum pengerjaan dimulai.</p>
+            </div>
+
+            <span class="jumlah-layanan" id="jumlah-layanan"></span>
+
+            <input type="search" class="cari-layanan" id="cari-layanan"
+                   placeholder="Cari layanan, mis. logo, website..." aria-label="Cari layanan">
+            <div class="grid" id="daftar-layanan"></div>
+    <main>
+        <h2>Formulir Pemesanan</h2>
+        <form class="form-jasa" id="formJasa">
+            <div>
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama lengkap" required>
+            </div>
+            <div>
+                <label for="wa">No WhatsApp</label>
+                <input type="tel" id="wa" name="wa" placeholder="08xxxxxxxxxx" required>
+            </div>
+            <div>
+                <label for="email">Gmail</label>
+                <input type="email" id="email" name="email" placeholder="nama@gmail.com" required>
+            </div>
+            <div class="pilihan">
+                <label>Pilihan Desain</label>
+                <label><input type="radio" name="desain" value="Desain Pamflet" required> Desain Pamflet</label>
+                <label><input type="radio" name="desain" value="Desain Logo Brand"> Desain Logo Brand</label>
+                <label><input type="radio" name="desain" value="Desain Banner"> Desain Banner</label>
+                <label><input type="radio" name="desain" value="Desain Website"> Desain Website</label>
+            </div>
+
+            <div>
+                <label> Upload Bukti Bayar</label>
+                <input type="file" id="bukti" name="bukti" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-kirim">Kirim Pesanan</button>
+        </form>
+    </main>
+    <main>
+            <div class="keahlian">
+                <h2>Keahlian Tim Kami</h2>
+                <ul class="daftar-keahlian" id="daftar-keahlian"></ul>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p class="footer-text"><em>2026 My Portfolio.</em></p>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>

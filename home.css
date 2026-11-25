@@ -1,0 +1,315 @@
+:root {
+    --bg-deep: #07111f;
+    --bg-mid: #0d2238;
+    --text: #ffffff;
+    --text-muted: #b9c4d3;
+    --accent: #1f6bff;
+    --accent-light: #4f8bff;
+    --line: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 100%) fixed var(--bg-deep);
+}
+
+.main-header,
+.hero-section,
+.jasa-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-flex;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navbar {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-light);
+    border-bottom-color: var(--accent-light);
+}
+
+:is(.nav-link, .cari-layanan, .btn):focus-visible {
+    outline: 2px solid var(--accent-light);
+    outline-offset: 3px;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.hero-section {
+    padding: 96px 48px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-section > span,
+.badge {
+    color: var(--accent-light);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.hero-section > span { font-size: 1.1rem; }
+.badge { display: inline-block; font-size: 0.85rem; }
+
+.hero-section h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    max-width: 20em;
+}
+
+.hero-section h2 {
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    font-weight: 600;
+    margin: 12px 0 20px;
+}
+
+.description,
+.judul p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.description {
+    max-width: 34em;
+    margin-bottom: 32px;
+}
+
+.jasa-page {
+    padding: 64px 48px 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.judul {
+    max-width: 40em;
+    margin-bottom: 32px;
+}
+
+.judul h1 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+}
+
+.judul h1 em {
+    font-style: normal;
+    color: var(--accent-light);
+}
+
+.judul p { margin-top: 12px; }
+
+.jumlah-layanan {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    color: var(--accent-light);
+    border: 1px solid var(--accent-light);
+    border-radius: 999px;
+}
+
+.cari-layanan,
+.form-jasa input:not([type="radio"]) {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cari-layanan {
+    display: block;
+    max-width: 360px;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.cari-layanan:hover,
+.form-jasa input:hover {
+    border-color: var(--accent-light);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.kartu {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.kartu:hover { border-color: var(--accent-light); }
+.kartu h3 { font-size: 1.1rem; }
+
+.deskripsi,
+.harga,
+.kartu ul {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.deskripsi { line-height: 1.6; margin-top: 8px; }
+.harga { margin: 16px 0; }
+.harga span { display: block; color: var(--text); font-size: 1.5rem; font-weight: 700; }
+
+.kartu ul { flex: 1; list-style: none; }
+.kartu li { position: relative; padding-left: 22px; margin-bottom: 8px; line-height: 1.5; }
+.kartu li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-light);
+    font-weight: 700;
+}
+
+.form-jasa {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.form-jasa label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--accent-light);
+    margin-bottom: 0.4rem;
+}
+
+.form-jasa input::placeholder { color: rgba(185, 196, 211, 0.55); }
+.form-jasa input:focus {
+    outline: none;
+    border-color: var(--accent-light);
+    box-shadow: 0 0 0 3px rgba(79, 139, 255, 0.25);
+}
+
+.form-jasa input[type="file"] { padding: 0.5rem; cursor: pointer; }
+
+.pilihan {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+}
+
+.pilihan label:not(:first-child) {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.pilihan label:last-child { margin-bottom: 0; }
+.pilihan input[type="radio"] { accent-color: var(--accent); width: 16px; height: 16px; }
+
+.contact-button,
+.btn {
+    font: inherit;
+    font-weight: 600;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 6px;
+    background: var(--accent);
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.contact-button:hover,
+.btn:hover { background: var(--accent-light); }
+.btn:active { transform: scale(0.99); }
+.btn-kirim { margin-top: 0.5rem; }
+
+.keahlian { margin-top: 48px; }
+.keahlian h2 { font-size: 1.4rem; margin-bottom: 16px; }
+
+.daftar-keahlian {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+.daftar-keahlian li {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background: rgba(31, 107, 255, 0.15);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--line);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .main-header { flex-direction: column; gap: 14px; padding: 16px 20px; }
+    .navbar { gap: 18px; flex-wrap: wrap; justify-content: center; }
+    .hero-section { padding: 48px 20px; align-items: center; text-align: center; }
+    .jasa-page { padding: 40px 20px 56px; }
+}
