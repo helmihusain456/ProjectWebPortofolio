@@ -65,7 +65,7 @@ ProjectWebPortofolio/
 | :--- | :--- | :--- |
 | **Elmi Husain** ([@helmihusain456](https://github.com/helmihusain456)) | `Team Leader` | Leadership, Project Management |
 | **Muhammad Rasya Ardian Pratama** | `Web Developer` | HTML, CSS, JavaScript |
-| **Fridatania Hasanatan** | `UI/UX Designer` | UI/UX Design, Figma |
+| **Frida Tania Hasanatan** | `UI/UX Designer` | UI/UX Design, Figma |
 
 </div>
 
