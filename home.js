@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         document.getElementById("btn-kembali").addEventListener("click", () => {
-            window.location.href = "home.html#formJasa";
+            window.location.href = "index.html#formJasa";
         });
     }
 });
