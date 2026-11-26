@@ -168,3 +168,21 @@ button:hover {
 .back-link:hover {
     text-decoration: underline;
 }
+
+.button-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 26px;
+    background: var(--accent);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.button-link:hover {
+    background: var(--accent-light);
+    border-color: var(--accent-light);
+}
