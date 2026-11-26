@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Anggota</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="about.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main class="container">
+        <section class="intro">
+            <h1>Formulir Anggota Website Team</h1>
+            <p>Silakan isi formulir berikut untuk menambahkan profil anggota tim.</p>
+        </section>
+
+        <section class="form" id="contact">
+            <form id="memberForm">
+                <label for="name">Nama lengkap</label>
+                <input type="text" id="name" placeholder="Nama lengkap" required>
+
+                <label for="role">Jabatan</label>
+                <select id="role" required>
+                    <option value="">Pilih jabatan</option>
+                    <option>Team Leader</option>
+                    <option>Web Developer</option>
+                    <option>UI/UX Designer</option>
+                </select>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required>
+
+                <label for="phone">Nomor telepon</label>
+                <input type="tel" id="phone" placeholder="Contoh: 081234567890" required>
+
+                <label for="skill">Keahlian</label>
+                <input type="text" id="skill" placeholder="Contoh: HTML, CSS, JavaScript" required>
+
+                <label for="photo">Foto profil</label>
+                <input type="file" id="photo" accept="image/*">
+
+                <label for="bio">Deskripsi diri</label>
+                <textarea id="bio" placeholder="Ceritakan tentang diri dan kemampuanmu" required></textarea>
+
+                <button type="submit">Kirim Profil</button>
+                <p id="formMessage" role="alert"></p>
+            </form>
+            <a class="back-link" href="about.html">Kembali ke About</a>
+        </section>
+    </main>
+</body>
+</html>
